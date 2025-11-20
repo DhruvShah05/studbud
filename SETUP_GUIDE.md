@@ -444,3 +444,4 @@ tail -f backend/logs/app.log
 ---
 
 **Setup complete! Enjoy using StudBud! 🎓✨**
+Just for vercel
