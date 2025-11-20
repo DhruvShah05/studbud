@@ -17,12 +17,11 @@ from routes.auth_routes import auth_bp
 app = Flask(__name__)
 app.config.from_object(Config)
 
-# Enable CORS for Next.js frontend
-# Get allowed origins from environment or use defaults
-allowed_origins = os.getenv('ALLOWED_ORIGINS', 'http://localhost:3000,http://localhost:3001').split(',')
+# TEMPORARY: Disable CORS entirely for testing
+# WARNING: This allows ALL origins - NOT secure for production!
 CORS(app, resources={
     r"/*": {
-        "origins": allowed_origins,
+        "origins": "*",
         "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
         "allow_headers": ["Content-Type", "Authorization"]
     }
